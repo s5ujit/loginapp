@@ -3,7 +3,7 @@ import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
 
 @Injectable()
 
-export class VideoDeatilsGurad implements CanActivate{
+export class jobDeatilsGurad implements CanActivate{
     constructor(private _router:Router)
     {
 
@@ -12,8 +12,8 @@ export class VideoDeatilsGurad implements CanActivate{
         let id=+route.url[1].path;
         if(isNaN(id)||id<0)
         {
-            alert('Invalid video id');
-            this._router.navigate(['/videos']);
+            alert('Invalid job id');
+            this._router.navigate(['/jobs']);
         }
         return true;
     }

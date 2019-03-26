@@ -4,7 +4,7 @@
             Search <input type="text" [(ngModel)]='listFilter'>{{listFilter}}
         </div>
         <div class="table-responsive">
-            <table class="table" *ngIf='myVideos && myVideos.length' >
+            <table class="table" *ngIf='myjobs && myjobs.length' >
                 <thead class="thead">
                     <tr>
                         <th>Id</th>
@@ -14,18 +14,18 @@
                         <th>Format</th>
                     </tr>
                 </thead>
-                <!--<tbody>
-                    <tr *ngFor='let item of myVideos | videoFilter:listFilter'>
+                <tbody>
+                    <tr *ngFor='let item of myjobs | jobFilter:listFilter'>
                         <td>{{item.Id}}</td>
                         <td>
-                            <a [routerLink]="['/video',item.Id]"> {{item.Title | uppercase}}
+                            <a [routerLink]="['/job',item.Id]"> {{item.Title | uppercase}}
                             </a>
                         </td>
                         <td>{{item.Length}}</td>
                         <td>{{item.Category | lowercase}}</td>
                         <td>{{item.Format}}</td>
                     </tr>
-                </tbody>-->
+                </tbody>
             </table>
         </div>
     </div>

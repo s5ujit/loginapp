@@ -4,25 +4,25 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
 
-import {VideoListComponent} from './training/video-list.component';
+import {jobListComponent} from './automation/job-list.component';
 import {Http, HttpModule} from '@angular/http'
-import { HomeComponent } from './training/home.component';
-import { VideoDetailComponent } from './training/video-details.component';
-import { VideoDeatilsGurad } from './training/video-guard.service';
-import { AddVideoComponent } from './training/add-video.component';
+import { HomeComponent } from './automation/home.component';
+import { jobDetailComponent } from './automation/job-details.component';
+import { jobDeatilsGurad } from './automation/job-guard.service';
+import { AddjobComponent } from './automation/add-job.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { VideoFilterPile } from './training/video-filter.pipe';
+import { jobFilterPile } from './automation/job-filter.pipe';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    VideoListComponent,
+    jobListComponent,
     HomeComponent,
-    VideoDetailComponent,
-    AddVideoComponent,
-    VideoFilterPile
+    jobDetailComponent,
+    AddjobComponent,
+    jobFilterPile
     
   ],
   imports: [
@@ -32,15 +32,15 @@ import { VideoFilterPile } from './training/video-filter.pipe';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path:'home',component:HomeComponent},      
-      { path:'videos',component:VideoListComponent},
-      {path:'video/:id',canActivate:[VideoDeatilsGurad],component:VideoDetailComponent},
-      { path:'newvideos',component:AddVideoComponent},
+      { path:'jobs',component:jobListComponent},
+      {path:'job/:id',canActivate:[jobDeatilsGurad],component:jobDetailComponent},
+      { path:'newjobs',component:AddjobComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       {path:'**',redirectTo:'home',pathMatch:'full'},
       
     ])
   ],
-  providers: [VideoDeatilsGurad],
+  providers: [jobDeatilsGurad],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

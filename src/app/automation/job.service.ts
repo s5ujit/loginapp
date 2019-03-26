@@ -5,19 +5,19 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 
-import {IVideo} from './video';
+import {Ijob} from './job';
 @Injectable()
-export class VideoService{
-   // private _serverUrl='http://marutivideo.azurewebsites.net/api/videos';
+export class jobService{
+   // private _serverUrl='http://marutijob.azurewebsites.net/api/jobs';
    private _serverUrl='http://35.154.115.218:8084/rest/login';
   // private _serverUrl='http://localhost:8084/rest/login';
     constructor(private http:Http)
     {
 
     }
-    getVideos():Observable<IVideo[]>{
+    getjobs():Observable<Ijob[]>{
         return this.http.get(this._serverUrl)
-                        .map((response:Response)=><IVideo[]>response.json())
+                        .map((response:Response)=><Ijob[]>response.json())
                         .do(data=>console.log("All : "+JSON.stringify(data)))
                         .catch(this.handelError);
     }
@@ -26,13 +26,13 @@ export class VideoService{
         return Observable.throw(error.json().error||'server error');
 
     }
-    getVideosById(id):Observable<IVideo>{
+    getjobsById(id):Observable<Ijob>{
         return this.http.get(this._serverUrl+"/"+id)
-                        .map((response:Response)=><IVideo>response.json())
+                        .map((response:Response)=><Ijob>response.json())
                         .do(data=>console.log("All : "+JSON.stringify(data)))
                         .catch(this.handelError);
     }
-   addVideo(body:any):Observable<IVideo[]>
+   addjob(body:any):Observable<Ijob[]>
    {
     console.log("=========================================");
     console.log(JSON.stringify(body));

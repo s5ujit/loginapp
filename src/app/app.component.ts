@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import {VideoService} from './training/video.service';
+import {jobService} from './automation/job.service';
 @Component({
-  selector: 'video-root',
+  selector: 'job-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers:[VideoService]
+  providers:[jobService]
 })
 export class AppComponent {
-  title = 'Learning Videos';
+  title = 'Learning jobs';
 }
