@@ -7,23 +7,31 @@
             <table class="table" *ngIf='myjobs && myjobs.length' >
                 <thead class="thead">
                     <tr>
-                        <th>Id</th>
-                        <th>Title</th>
-                        <th>Length</th>
-                        <th>Category</th>
-                        <th>Format</th>
+                        <th>VM1</th>
+                        <th>VM2</th>
+                        <th>ID</th>
+                        <th>JobId</th>
+                        <th>BDE DSN</th>
+                        <th>BDE Site Name</th>
+                        <th>EXS User</th>
+                        <th>State 1</th>
+                        <th>State 2</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor='let item of myjobs | jobFilter:listFilter'>
-                        <td>{{item.Id}}</td>
+                        <td><input type="checkbox"  ng-true-value="ng-true-value" ng-false-value="'ng-false-value'"></td>
+                        <td><input type="checkbox"  ng-true-value="ng-true-value" ng-false-value="'ng-false-value'"></td>
                         <td>
-                            <a [routerLink]="['/job',item.Id]"> {{item.Title | uppercase}}
+                            <a [routerLink]="['/job',item.id]"> {{item.id }}
                             </a>
                         </td>
-                        <td>{{item.Length}}</td>
-                        <td>{{item.Category | lowercase}}</td>
-                        <td>{{item.Format}}</td>
+                        <td>{{item.fixlet_id}}</td>
+                        <td>{{item.bdedsn}}</td>
+                        <td>{{item.bde_sitename}}</td>
+                        <td>{{item.esx_user}}</td>
+                        <td>{{item.state}}</td>
+                        <td>{{item.state_new}}</td>
                     </tr>
                 </tbody>
             </table>

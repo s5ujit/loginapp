@@ -45,7 +45,7 @@ export class AddjobComponent{
     }
     addjob(body:any)
     {
-        console.log("=========================================");
+       
         this._jobService.addjob(body).subscribe();
     }
 }

@@ -8,15 +8,14 @@ import 'rxjs/add/operator/catch';
 import {Ijob} from './job';
 @Injectable()
 export class jobService{
-   // private _serverUrl='http://marutijob.azurewebsites.net/api/jobs';
-   private _serverUrl='http://35.154.115.218:8084/rest/login';
-  // private _serverUrl='http://localhost:8084/rest/login';
+
+   private _serverUrl='rest/job';
     constructor(private http:Http)
     {
 
     }
     getjobs():Observable<Ijob[]>{
-        return this.http.get(this._serverUrl)
+        return this.http.get("rest/jobs")
                         .map((response:Response)=><Ijob[]>response.json())
                         .do(data=>console.log("All : "+JSON.stringify(data)))
                         .catch(this.handelError);
@@ -26,16 +25,14 @@ export class jobService{
         return Observable.throw(error.json().error||'server error');
 
     }
-    getjobsById(fixlet_id):Observable<Ijob>{
-        return this.http.get(this._serverUrl+"/"+fixlet_id)
+    getjobsById(id):Observable<Ijob>{
+        return this.http.get(this._serverUrl+"/"+id)
                         .map((response:Response)=><Ijob>response.json())
                         .do(data=>console.log("All : "+JSON.stringify(data)))
                         .catch(this.handelError);
     }
    addjob(body:any):Observable<Ijob[]>
    {
-    console.log("=========================================");
-    console.log(JSON.stringify(body));
        let bodyString=JSON.stringify(body);
        let headers=new Headers({'Content-type':'application/json'});
        let options=new RequestOptions({headers:headers});

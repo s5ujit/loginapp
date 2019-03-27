@@ -8,10 +8,9 @@ export interface Ijob{
   esx_pass:string,
   esx_server:string,
   esx_user:string,
-  fixlet_id:number,
+  fixlet_id:string,
   jobid:string,
   jobtype:string,
-  lastUpdate:string,
   mui:boolean ,
   pid:string,
   pid_new:string,
@@ -25,5 +24,6 @@ export interface Ijob{
   state_new:string,
   version:number ,
   vmsafety_off:boolean 
+  id:number
     
 }

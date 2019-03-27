@@ -16,7 +16,7 @@ export class jobDetailComponent implements OnInit{
     }
     ngOnInit():void{
         //console.log('i am using componenet lyf cycle hook....!');
-        this._jobService.getjobsById('1')
+        this._jobService.getjobsById('8')
         .subscribe(jobs=>this.job=jobs,
         error=>this.errorMessage=<any>error);
     }

@@ -17,7 +17,6 @@ export class jobListComponent implements OnInit{
     }
     errorMessage:string;
     ngOnInit():void{
-        //console.log('i am using componenet lyf cycle hook....!');
         this._jobService.getjobs()
         .subscribe(jobs=>this.myjobs=jobs,
         error=>this.errorMessage=<any>error);
