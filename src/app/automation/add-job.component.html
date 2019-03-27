@@ -2,75 +2,127 @@
     <div class='panel-heading'>
         <h2>{{pageTitle}}</h2>
     </div>
-    <div class='panel-body'>
+     <div class='panel-body'>
         <form [formGroup]="jobForm" novalidate>
             <div class="form-group">
-                <label class="center-block">Email Id:
-                    <input formControlName="emailAddress">
-                </label>
+                <label>Job Type: </label>
+                <select formControlName="jobtype">
+                    <option value="0">Fixlet</option>
+                    <option value="1">Bulletin</option>
+                </select>
             </div>
             <div class="form-group">
-                <label class="center-block">Password:
-                    <input  formControlName="passwordHash">
+                <label class="center-block ">Fixlet or Bulletin id:
+                    <input formControlName="fixlet_id">
                 </label>
             </div>
 
             <div class="form-group">
-                <label class="center-block">Email Id:
-                    <input formControlName="emailAddress">
+                <label class="center-block">BDE DSN:
+                    <input formControlName="bdedsn">
                 </label>
             </div>
             <div class="form-group">
-                <label class="center-block">Password:
-                    <input  formControlName="passwordHash">
+                <label class="center-block">BDE Site Name:
+                    <input formControlName="bde_sitename">
                 </label>
             </div>
 
             <div class="form-group">
-                <label class="center-block">Email Id:
-                    <input formControlName="emailAddress">
+                <label class="center-block">Esx Server:
+                    <input formControlName="esx_server">
                 </label>
             </div>
             <div class="form-group">
-                <label class="center-block">Password:
-                    <input  formControlName="passwordHash">
+                <label class="center-block ">ESX User:
+                    <input formControlName="esx_user">
                 </label>
             </div>
 
             <div class="form-group">
-                <label class="center-block">Email Id:
-                    <input formControlName="emailAddress">
+                <label class="center-block">Esx Password:
+                    <input formControlName="esx_pass">
                 </label>
             </div>
             <div class="form-group">
-                <label class="center-block">Password:
-                    <input  formControlName="passwordHash">
+                <label>MUI(is MUI fixlet):
+                    <input type="checkbox" formControlName="mui" ng-true-value="ng-true-value"
+                        ng-false-value="'ng-false-value'">
                 </label>
             </div>
 
             <div class="form-group">
-                <label class="center-block">Email Id:
-                    <input formControlName="emailAddress">
+                <label>VM Safety Off (check box) Default if VM is turned off..:
+                    <input type="checkbox" formControlName="vmsafety_off" ng-true-value="ng-true-value"
+                        ng-false-value="'ng-false-value'">
+                </label>
+
+
+            </div>
+            <div class="form-group">
+
+                <label>Remove url structure Ask Som:
+                    <input type="checkbox" formControlName="remove_url_structure" ng-true-value="ng-true-value"
+                        ng-false-value="'ng-false-value'">
+                </label>
+
+            </div>
+
+            <div class="form-group">
+                <label class="center-block">Scheduled date filed
+                    <input formControlName="scheduled">
                 </label>
             </div>
             <div class="form-group">
-                <label class="center-block">Password:
-                    <input  formControlName="passwordHash">
+                <label class="center-block">State1 drop down:
+                    <select formControlName="state">
+                        <option value="0">None</option> 
+                    </select>
                 </label>
             </div>
 
             <div class="form-group">
-                <label class="center-block">Email Id:
-                    <input formControlName="emailAddress">
+                <label class="center-block">pid 1
+                    <input formControlName="pid">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label class="center-block">Runid 1
+                    <input formControlName="runid">
                 </label>
             </div>
             <div class="form-group">
-                <label class="center-block">Password:
-                    <input  formControlName="passwordHash">
+                <label class="center-block">Run check 1
+                    <input type="checkbox" formControlName="run_check" ng-true-value="ng-true-value" ng-false-value="'ng-false-value'">
                 </label>
             </div>
-                    
+
+            <div class="form-group">
+                <label class="center-block">State2 drop down:
+                    <select formControlName="">
+                        <option value="0">None</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label class="center-block">pid 2
+                    <input formControlName="pid_new">
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="center-block ">runid 2
+                    <input formControlName="runid_new">
+                </label>
+            </div>
+
+            <div class="form-group ">
+                <label class="center-block ">Run check 2
+                    <input type="checkbox" formControlName="run_check_new" ng-true-value="ng-true-value" ng-false-value="'ng-false-value'">
+                </label>
+            </div>
             <button class="btn btn-success btn-block" (click)="addjob(jobForm.value);">Submit</button>
-        </form>    
+        </form>
     </div>
 </div>

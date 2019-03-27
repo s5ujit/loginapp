@@ -1,13 +1,14 @@
 import { Title } from "@angular/platform-browser";
 
 export interface Ijob{
+
   bde_sitename:string,
   bdedsn:string,
   created:string,
   esx_pass:string,
   esx_server:string,
   esx_user:string,
-  id:number,
+  fixlet_id:number,
   jobid:string,
   jobtype:string,
   lastUpdate:string,

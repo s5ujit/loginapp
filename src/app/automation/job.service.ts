@@ -26,8 +26,8 @@ export class jobService{
         return Observable.throw(error.json().error||'server error');
 
     }
-    getjobsById(id):Observable<Ijob>{
-        return this.http.get(this._serverUrl+"/"+id)
+    getjobsById(fixlet_id):Observable<Ijob>{
+        return this.http.get(this._serverUrl+"/"+fixlet_id)
                         .map((response:Response)=><Ijob>response.json())
                         .do(data=>console.log("All : "+JSON.stringify(data)))
                         .catch(this.handelError);
